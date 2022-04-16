@@ -23,9 +23,9 @@ print("--------------------------------------------")
 print("""
 Choose and remember one of the food from the list below:
 
-Apple,  Banana,    Grapes, Papaya,    Orange
-Walnut, Blueberry, Almond, Pistachio, Dates
-Burger, Pizza,     MoMo,   Mushroom,  Sizzler
+Apple\t\tBanana\t\tGrapes\t\tPapaya\t\tOrange
+Walnut\t\tBlueberry\tAlmond\t\tPistachio\tDates
+Burger\t\tPizza\t\tMoMo\t\tMushroom\tSizzler
 """)
 input("Press Enter when you are done:")
 print("--------------------------------------------")
