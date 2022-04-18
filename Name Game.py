@@ -1,6 +1,6 @@
 #Author: Binod Maharjan
 #Program Name: Name Game
-#Version: 1.0
+#Version: 1.0.1
 #Date: 18/04/2022 
 
 from wsgiref.validate import InputWrapper
@@ -8,33 +8,25 @@ import random
 
 print("\nThis is a small game, I used to play when I was a kid.")
 
-'''
-#this is for getting input from from the user.
-userName = input("Please enter your Name: ")
-print("--------------------------------------------")
-print("Hello! " + userName + ", welcome to my game.")
-print("Hello!",userName,", welcome to my game.")
-print("Hello!",userName + ", welcome to my game.")
-
-#example showing data type conversion
-userAge = int(input("Please enter your Age: "))
-print(userAge)
-
-#what is the type of data stored in variable?
-print(type(userName))
-print(type(userAge))
-'''
-
 input("\nPress Enter to begin the game: ")
 print("\n--------------------------------------------")
 print('Choose and remember one of the food from the list below:')
-ListMain = ['Apple','Burger','Walnut','Banana','Pizza','Blueberry','Grapes','MoMo','Almond','Papaya','Cake','Pistachio','Orange','Sizzler','Dates']
+rawListMain = ['Apple','Burger','Walnut','Banana','Pizza','Blueberry','Grapes','MoMo','Almond','Papaya','Cake','Pistachio','Orange','Sizzler','Dates']
+
 # the loop below is to print the 15 items of main list in 3 columns and 5 rows
 i = 0
 while i<15:
-    print(ListMain[i]+'\t'+ListMain[(i+1)]+'\t'+ListMain[(i+2)])
+    print(rawListMain[i]+'\t'+rawListMain[(i+1)]+'\t'+rawListMain[(i+2)])
     i+=3
 input("\nPress Enter when you are done:")
+
+#Make a random list of above the rawListMain.
+ListMain = []
+i = 1
+while i<=rawListMain.__len__():
+    r_selected = random.choice(rawListMain)
+    ListMain.append(r_selected)
+    rawListMain.remove(r_selected)
 
 #There are 4 sub lists made from main list to display them randomly. 
 #These sub lists are named as 1, 2, 4 and 8.

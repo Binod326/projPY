@@ -30,3 +30,21 @@ print(4 * 'Notice! ')
 print(2*'pa'+'ya')
 print('a'+'b'*(2**3))
 print(('a'+'b')*(2**3))
+
+
+#this is for getting input from from the user.
+userName = input("Please enter your Name: ")
+print("--------------------------------------------")
+print("Hello! " + userName + ", welcome to my game.")
+print("Hello!",userName,", welcome to my game.")
+print("Hello!",userName + ", welcome to my game.")
+
+#example showing data type conversion
+userAge = int(input("Please enter your Age: "))
+print(userAge)
+
+#what is the type of data stored in variable?
+print(type(userName))
+print(type(userAge))
+
+
