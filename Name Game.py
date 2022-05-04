@@ -1,13 +1,13 @@
 #Author: Binod Maharjan
 #Program Name: Name Game
-#Version: 1.0.1
 #Date: 18/04/2022 
+#Version: 1.0.2
+#Version date: 04/05/2022
 
 from wsgiref.validate import InputWrapper
 import random
 
 print("\nThis is a small game, I used to play when I was a kid.")
-
 input("\nPress Enter to begin the game: ")
 print("\n--------------------------------------------")
 print('Choose and remember one of the food from the list below:')
@@ -93,8 +93,14 @@ print("--------------------------------------------")
 input('Press Enter to exit the game: ')
 
 #multiplication table printing
-m = int(input("Enter which table you want to print: "))
-x = int(input("Enter how long you want to multipication: "))
+while True:
+    m = int(input("Enter which multiplication table you want to print: "))
+    if type(m).__name__ == 'int':
+        break
+    else:
+        m = int(input("Enter which multiplication table you want to print: "))
+    
+x = int(input("Enter how long the multiplication table you want to go: "))
 for i in range(x+1):
     print(m,"x", i,"=",i*m)
 input('Press Enter to exit: ')

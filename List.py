@@ -3,7 +3,10 @@
 #Version: 0.0.1
 #Date: 18/04/2022 
 import random
-
+'''
+m = int(input("Enter which multiplication table you want to print: "))
+print(type(m).__name__=="int")
+'''
 rawListMain = ['Apple','Burger','Walnut','Banana','Pizza','Blueberry','Grapes','MoMo','Almond','Papaya','Cake','Pistachio','Orange','Sizzler','Dates']
 print(rawListMain)
 
