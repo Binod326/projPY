@@ -87,7 +87,14 @@ selected = choiceList[0]
 #running the function(4th time) to print the selected list and get new answer index
 ansIndex = printSelectedList(selected,ansIndex)
 
-
 print("--------------------------------------------")
 print('The food item you have remembered is '+ ListMain[ansIndex-1]+'.')
 print("--------------------------------------------")
+input('Press Enter to exit the game: ')
+
+#multiplication table printing
+m = int(input("Enter which table you want to print: "))
+x = int(input("Enter how long you want to multipication: "))
+for i in range(x+1):
+    print(m,"x", i,"=",i*m)
+input('Press Enter to exit: ')
