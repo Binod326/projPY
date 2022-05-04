@@ -93,14 +93,21 @@ print("--------------------------------------------")
 input('Press Enter to exit the game: ')
 
 #multiplication table printing
+print('\n\nThis program is going to print the Multiplication Table.')
 while True:
-    m = int(input("Enter which multiplication table you want to print: "))
-    if type(m).__name__ == 'int':
-        break
-    else:
+    try:
         m = int(input("Enter which multiplication table you want to print: "))
-    
-x = int(input("Enter how long the multiplication table you want to go: "))
+    except:
+        print('Invalid number input! Please enter only whole numbers.')
+    else:
+        break
+while True:
+    try:
+        x = int(input("Enter how long the multiplication table you want to go: "))
+    except:
+        print('Invalid number input! Please enter valid whole number.')
+    else:
+        break
 for i in range(x+1):
     print(m,"x", i,"=",i*m)
 input('Press Enter to exit: ')
