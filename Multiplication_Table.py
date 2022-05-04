@@ -3,6 +3,7 @@
 #Date: 04/05/2022 
 #Version: 0.0.1
 
+# using while loop, for loop and exception handling
 '''try:
     m = int(input("Enter which multiplication table you want to print: "))
 except ValueError:
