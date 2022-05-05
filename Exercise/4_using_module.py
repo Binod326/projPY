@@ -1,10 +1,12 @@
 #excersice using modules
-
-from gettext import ngettext
+'''import sys
+from pathlib import Path
 import math
 content = dir(math)
 print(content)
+print(dir(Path))
+'''
 
-from ...projPY import Name_Game as NG
-content = dir(NG)
-print(NG)
+from Mod_Multiplication_Table import multiplicationTable as MT
+content = dir(MT)
+print(MT(5,20))
