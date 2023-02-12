@@ -31,4 +31,30 @@ soup = BeautifulSoup(htmlContent, 'html.parser')
 # 3. BeautifulSoup
 # 4. Comment
 title = soup.title
-print(title)
+# print(title)
+# print(type(title))
+# print(type(title.string))
+# print(type(soup))
+
+# Get the title of the HTML Page
+print(title.string)
+
+# Get all the paragraphs from the page
+paras = soup.find_all('p')
+# print(paras)
+
+# Get all the anchor tags from the page
+anchors = soup.find_all('a')
+# print(anchors)
+
+# Get first element in the HTML page
+print(soup.find('p'))
+
+# # Get classes of any element in the HTML page
+# print(soup.find('p')['class'])
+
+# # find all the element with class mt-2
+# print(soup.find_all("p", class_="mt-2"))
+
+# Get the text from the tags/soup
+print(soup.find('p').get_text)
