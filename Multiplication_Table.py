@@ -13,7 +13,9 @@ else:
     print('this is else statment.')
 finally:
     print('This is finally statement.')'''
-
+import datetime as date
+print(date.datetime.now())
+print(date.datetime.today())
 while True:
     try:
         m = int(input("Enter which multiplication table you want to print: "))

@@ -1,5 +1,5 @@
 #Program Name: Game_Dino
-#Date: 26/02/2023 
+#Date: 02/03/2023 
 
 # play game in url: chrome://dino/
 # learn more: https://pypi.org/project/PyAutoGUI/  and  https://pyautogui.readthedocs.io/en/latest/
