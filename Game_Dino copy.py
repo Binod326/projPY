@@ -5,9 +5,10 @@
 # learn more: https://pypi.org/project/PyAutoGUI/  and  https://pyautogui.readthedocs.io/en/latest/
 # Check this url: https://www.geeksforgeeks.org/keyboard-module-in-python/
 
-import pyautogui # pip install pyautogui >> pip install --upgrade pyautogui >> pip show pyautogui
-from PIL import Image, ImageGrab # pip install pillow
 import time
+import pyautogui  # pip install pyautogui >> pip install --upgrade pyautogui >> pip show pyautogui
+from PIL import Image, ImageGrab  # pip install pillow
+
 # from numpy import asarray # pip install numpy
 
 def isCollide(data):

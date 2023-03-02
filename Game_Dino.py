@@ -8,10 +8,12 @@
 # learn more: https://pypi.org/project/PyAutoGUI/  and  https://pyautogui.readthedocs.io/en/latest/
 # Check this url: https://www.geeksforgeeks.org/keyboard-module-in-python/
 
-import keyboard #pip install keyboard
-import pyautogui # pip install pyautogui >> pip install --upgrade pyautogui >> pip show pyautogui
-from PIL import Image, ImageGrab # pip install pillow
 import time
+
+import keyboard  # pip install keyboard
+import pyautogui  # pip install pyautogui >> pip install --upgrade pyautogui >> pip show pyautogui
+from PIL import Image, ImageGrab  # pip install pillow
+
 # from numpy import asarray # pip install numpy
 
 def isCollide(data):
@@ -34,10 +36,10 @@ def on_key_press(event):
             image = ImageGrab.grab().convert('L')
             data = image.load()
             if isCollide(data):
-                print("this is not working")
+                keyboard.press('up')
+                # print("this is not working")
                 # pyautogui.press('up')
-                # keyboard.hit('up')
-                # keyboard.press('up')
+                
             # print(asarray(image))
             # for i in range(500,550):
             #     for j in range(1100,1200):
