@@ -6,7 +6,7 @@
 # Check this url: https://www.geeksforgeeks.org/keyboard-module-in-python/
 
 import time
-import datetime as date
+# import datetime as date
 
 
 import pyautogui  # pip install pyautogui >> pip install --upgrade pyautogui >> pip show pyautogui
@@ -15,15 +15,15 @@ from PIL import Image, ImageGrab  # pip install pillow
 
 def playDayMode(data):
     # Draw rectangle for Birds
-    for i in range(395, 410): #x-axis
+    for i in range(395, 440): #x-axis
         for j in range(250,340): #y-axis
             if data[i,j] < 100:
                 pyautogui.keyDown('down')  
-                time.sleep(0.35)
+                time.sleep(0.3)
                 pyautogui.keyUp('down')
                 return
     # Draw rectangle for Cactus
-    for i in range(405,420): #x-axis
+    for i in range(405,445): #x-axis 405
         for j in range(341,440): #y-axis
             if data[i, j] < 100:                
                 pyautogui.keyDown('up')              
@@ -32,15 +32,15 @@ def playDayMode(data):
 
 def playNightMode(data):
     # Draw rectangle for Birds
-    for i in range(395, 410): #x-axis
+    for i in range(395, 440): #x-axis
         for j in range(250,340): #y-axis
             if data[i,j] > 150:
                 pyautogui.keyDown('down')  
-                time.sleep(0.35)
+                time.sleep(0.3)
                 pyautogui.keyUp('down')
                 return
     # Draw rectangle for Cactus
-    for i in range(405,420): #x-axis
+    for i in range(405,445): #x-axis
         for j in range(341,440): #y-axis
             if data[i, j] > 150:                
                 pyautogui.keyDown('up')              
