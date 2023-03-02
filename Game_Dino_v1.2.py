@@ -57,7 +57,7 @@ if __name__ == "__main__":
         # Check if it is dark night
         counter = 0
         for i in range(1,400):
-            if data[i,600]<100:
+            if data[i,600]<127: # try with the value 255/2 = 127 instead of 100
                 counter=+i      # count how many pixel the light is below 100
             # # draw line where we tried to detect mode
             # data[i,600] = 100
