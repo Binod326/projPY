@@ -9,4 +9,4 @@ print(dir(Path))
 
 from Mod_Multiplication_Table import multiplicationTable as MT
 content = dir(MT)
-print(MT(5,20))
+print(MT(51,20))
