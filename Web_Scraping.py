@@ -55,7 +55,7 @@ print(title.string)
 # # Get classes of any element in the HTML page. For eg, get classes of first element with tag <p>.
 # print(soup.find('p')['class'])
 
-# # find all the element with class mt-2
+# # # find all the element with class mt-2
 # # print(soup.find_all("p", class_="mt-2")) 
 # print(soup.find_all("p", class_="text-gray-700"))
 
