@@ -10,21 +10,26 @@ import time
 import pyautogui  # pip install pyautogui >> pip install --upgrade pyautogui >> pip show pyautogui
 from PIL import Image, ImageGrab  # pip install pillow
 # from numpy import asarray # pip install numpy
+x_axis_range = range(365, 400)
+y_axis_range_bird = range(250, 340)
+y_axis_range_cactus = range(341, 440)
 
 def hit(key):
     pyautogui.keyDown(key)
+    time.sleep(0.18)
+    pyautogui.keyUp("down")
     return
 
 def playDayMode(data):
     # Draw rectangle for Birds
-    for i in range(300, 415): #x-axis
-        for j in range(250,340): #y-axis
+    for i in x_axis_range: #x-axis
+        for j in y_axis_range_bird: #y-axis
             if data[i,j] < 100:
                 hit('down')
                 return
     # Draw rectangle for Cactus
-    for i in range(300,415): #x-axis 405
-        for j in range(341,440): #y-axis
+    for i in x_axis_range: #x-axis 405
+        for j in y_axis_range_cactus: #y-axis
             if data[i, j] < 100:                
                 hit('up')            
                 return            
@@ -32,14 +37,14 @@ def playDayMode(data):
 
 def playNightMode(data):
     # Draw rectangle for Birds
-    for i in range(300, 415): #x-axis
-        for j in range(250,340): #y-axis
+    for i in x_axis_range: #x-axis
+        for j in y_axis_range_bird: #y-axis
             if data[i,j] > 150:
                 hit('down')
                 return
     # Draw rectangle for Cactus
-    for i in range(300,415): #x-axis
-        for j in range(341,440): #y-axis
+    for i in x_axis_range: #x-axis
+        for j in y_axis_range_cactus: #y-axis
             if data[i, j] > 150:                
                 hit('up')             
                 return            
@@ -62,25 +67,26 @@ if __name__ == "__main__":
             # # draw line where we tried to detect mode
             # data[i,600] = 100
         # print(counter)
+
         if counter < 100:
             # print('day mode')
             playDayMode(data)
         else:
             # print('night mode', date.datetime.today())
             playNightMode(data)
+
         # image.show()
         # break
         
         # print(asarray(image))
         
         # # Draw rectangle for Birds
-        # for i in range(395, 430): #x-axis
-        #     for j in range(250,340): #y-axis
+        # for i in x_axis_range: #x-axis
+        #     for j in y_axis_range_bird: #y-axis
         #         data[i,j] = 170
-        
         # # Draw rectangle for Cactus
-        # for i in range(405,420): #x-axis
-        #     for j in range(341,440): #y-axis
+        # for i in x_axis_range: #x-axis
+        #     for j in y_axis_range_cactus: #y-axis
         #         data[i,j] = 100
         # image.show()
         # break
