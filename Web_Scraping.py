@@ -12,8 +12,12 @@
 # pip install bs4
 # pip install html5lib
 
+# Learn more about beautifulsoup in the link below:
+# https://www.tutorialspoint.com/beautiful_soup/beautiful_soup_installation.htm
+# https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-a-parser
+
 import requests
-from bs4 import BeautifulSoup  # https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-a-parser
+from bs4 import BeautifulSoup  
 url = "https://www.codewithharry.com/"
 
 # Step 1: Get the HTML
@@ -35,7 +39,7 @@ soup = BeautifulSoup(htmlContent, 'html.parser')
 title = soup.title
 # print(title)
 # Get the title of the HTML Page
-print(title.string)
+print('\n\n' + title.string)
 # # finding it's type
 # print(type(title))
 # print(type(title.string))
@@ -59,6 +63,15 @@ print(title.string)
 # # print(soup.find_all("p", class_="mt-2")) 
 # print(soup.find_all("p", class_="text-gray-700"))
 
-# Get the text from the tags/soup
-print(soup.find('p').get_text())
-print(soup.find('p').string)
+# # Get the text from the tags/soup
+# print(soup.find('p').get_text())
+# print(soup.find('p').string)
+
+# Counting the no. of paragraphs in this web page.
+count = 0
+for paragraphs in soup.find_all("p"):
+    count += 1
+print('\n\nThere are',count,'paragraphs used in this web page.\n\n')
+
+for links in soup.find_all('a'):
+    print(links.get('href'),'\t------->',links.get_text())
