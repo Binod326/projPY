@@ -32,6 +32,62 @@ Get-Help -Name Get-FileHash -Detailed
 help Get-FileHash
 help Get-FileHash -Examples
 
+Compare-Object (Get-FileHash file1.txt) (Get-FileHash file2.txt) -Property Hash
+Get-ExecutionPolicy # default value is Restricted
+Get-ExecutionPolicy -List 
+Set-ExecutionPolicy RemoteSigned # to allow the execution of local script or unlocked script.
+Set-ExecutionPolicy Undefined # to restricted the execution of script.
 
+# create a new folder named "MyFolder" at the root of the C drive. Then save a file named "myfile.txt" in that folder with the text "This is some text to save in the file."
+New-Item -ItemType Directory -Path "C:\MyFolder" 
+Set-Content -Path "C:\MyFolder\myfile.txt" -Value "This is some text to save in the file." 
 
+## How to save content with multi-lines
+# Set the file path and name
+$FilePath = "C:\Users\ExampleUser\Documents\NewTextFile.txt"
+
+# Create the text file
+New-Item -ItemType File -Path $FilePath
+
+# Add content to the file with a here-string
+$Content = @"
+This is an example of text in a PowerShell-generated file.
+It includes multiple lines of text.
+You can add as many lines as you need.
+"@
+
+Add-Content -Path $FilePath -Value $Content
+
+## How to check if the file already exist in that location
+# Set the file path and name
+$myPath = "C:\Users\ExampleUser\Documents"
+$myFileName = "ExistingTextFile.txt"
+$FilePath = $myPath + "\" + $myFileName
+
+# Check if the file already exists
+if (Test-Path $FilePath) {
+    # If the file exists, append new content to it
+    Write-Output "File already exists in the Path."
+    $Content = @"
+This is additional text that will be added to the existing file.
+"@
+    Add-Content -Path $FilePath -Value $Content -NoClobber
+} else {
+    # If the file does not exist, create it and add initial content
+    $Content = @"
+This is the initial text that will be added to a new file.
+"@
+    New-Item -ItemType File -Path $FilePath
+    Add-Content -Path $FilePath -Value $Content
+    Write-Output "New file with given cotent also created in $myFilePath."
+}
+
+New-Item -Path .\IsReadOnlyTextFile.txt -ItemType File
+Set-ItemProperty -Path .\IsReadOnlyTextFile.txt -Name IsReadOnly -Value $True
+Get-ChildItem -Path .\IsReadOnlyTextFile.txt
+Add-Content -Path .\IsReadOnlyTextFile.txt -Value 'Add value to read-only text file' -Force
+Get-Content -Path .\IsReadOnlyTextFile.txt
+
+Add-Content -Path .\IsReadOnlyTextFile.txt -Value 'Add new value to read-only text file' -Force
+Get-Content -Path .\IsReadOnlyTextFile.txt
 
