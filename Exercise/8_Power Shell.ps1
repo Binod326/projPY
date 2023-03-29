@@ -91,3 +91,17 @@ Get-Content -Path .\IsReadOnlyTextFile.txt
 Add-Content -Path .\IsReadOnlyTextFile.txt -Value 'Add new value to read-only text file' -Force
 Get-Content -Path .\IsReadOnlyTextFile.txt
 
+# Discover Objects by using Get-Member
+Get-Process -Name python*
+Get-Process -Name python* | Get-Member
+Get-Process -Name AnyDesk
+Get-Process -Name AnyDesk | Get-Member
+
+$PSVersionTable | Get-Member
+
+Get-Command -ParameterType process 
+Get-Command -ParameterType System.Management.Automation*
+Get-Uptime | Get-Member
+Get-Command -ParameterType timespan
+
+Get-Process -Name AnyDesk | Get-Member | Select-Object Name, MemberType
